@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_jdfactory
+name: jd_live_redrain
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '36 * * * *'
+    - cron: '0 0,9,11,13,15,17,19,20,21,23 * * *'
   watch:
-    types: [started]
+    types: started
   repository_dispatch:
-    types: jdfactory
+    types: live_redrain
 jobs:
   build:
 
@@ -36,18 +36,16 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【东东工厂】'
+      - name: '运行 【直播红包雨】'
         run: |
-          node jd_jdfactory.js
+          node jd_live_redrain.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
-          PETSHARECODES: ${{ secrets.PETSHARECODES }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
-          PET_NOTIFY_CONTROL: ${{ secrets.PET_NOTIFY_CONTROL }}
           BARK_SOUND: ${{ secrets.BARK_SOUND }}
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
