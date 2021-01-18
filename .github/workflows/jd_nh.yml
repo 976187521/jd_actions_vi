@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_live_redrain
+name: jd_nh
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0,9,11,13,15,17,19,20,21,23 * * *'
+    - cron: '10 8 * * *'
   watch:
-    types: started
+    types: [started]
   repository_dispatch:
-    types: live_redrain
+    types: nh
 jobs:
   build:
 
@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: lxk0301/jd_scripts
+          repository: vidocqh/jd_scripts
           ref: master
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -36,17 +36,29 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【直播红包雨】'
+      - name: '运行 【年货节(活动时间：2021年1月9日-2021年2月9日)】'
         run: |
-          node jd_live_redrain.js
+          node jd_nh.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          PETSHARECODES: ${{ secrets.PETSHARECODES }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
+          PET_NOTIFY_CONTROL: ${{ secrets.PET_NOTIFY_CONTROL }}
           BARK_SOUND: ${{ secrets.BARK_SOUND }}
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
+          DREAM_FACTORY_SHARE_CODES: ${{ secrets.DREAM_FACTORY_SHARE_CODES }}
+          JDJOY_SHARECODES: ${{ secrets.JDJOY_SHARECODES }}
+          FRUITSHARECODES: ${{ secrets.FRUITSHARECODES }}
+          PLANT_BEAN_SHARECODES: ${{ secrets.PLANT_BEAN_SHARECODES }}
+          SUPERMARKET_SHARECODES: ${{ secrets.SUPERMARKET_SHARECODES }}
+          DDFACTORY_SHARECODES: ${{ secrets.DDFACTORY_SHARECODES }}
+          JDZZ_SHARECODES: ${{ secrets.JDZZ_SHARECODES }}
+          BOOKSHOP_SHARECODES: ${{ secrets.BOOKSHOP_SHARECODES }}
+          JD_CASH_SHARECODES: ${{ secrets.JD_CASH_SHARECODES }}
+          JXNC_SHARECODES: ${{ secrets.JXNC_SHARECODES }}
