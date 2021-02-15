@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_family
+name: jd_nian_sign_京东炸年兽签到任务🧨
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/20 * * * *'
+    - cron: '50 16-17 * * *'
   watch:
     types: [started]
   repository_dispatch:
-    types: family
+    types: nian_sign
 jobs:
   build:
 
@@ -36,9 +36,12 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【京东家庭号(暂不知最佳cron)】'
+      - name: run script
         run: |
-          node jd_family.js
+          python3 sorryLXK.py
+      - name: '运行 【京东炸年兽签到任务🧨】'
+        run: |
+          node jd_nian_sign.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
@@ -62,3 +65,6 @@ jobs:
           BOOKSHOP_SHARECODES: ${{ secrets.BOOKSHOP_SHARECODES }}
           JD_CASH_SHARECODES: ${{ secrets.JD_CASH_SHARECODES }}
           JXNC_SHARECODES: ${{ secrets.JXNC_SHARECODES }}
+          JDSGMH_SHARECODES: ${{ secrets.JDSGMH_SHARECODES }}
+          JDNIAN_SHARECODES: ${{ secrets.JDNIAN_SHARECODES }}
+          JDSXSY_SHARECODES: ${{ secrets.JDSXSY_SHARECODES }}

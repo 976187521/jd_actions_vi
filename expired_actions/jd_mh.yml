@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_nh
+name: jd_mh_盲盒抽京豆(活动时间：2021年1月6日～2021年2月5日)
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 8 * * *'
+    - cron: '1 23 * * *'
   watch:
     types: [started]
   repository_dispatch:
-    types: nh
+    types: mh
 jobs:
   build:
 
@@ -36,9 +36,12 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【年货节(活动时间：2021年1月9日-2021年2月9日)】'
+      - name: run script
         run: |
-          node jd_nh.js
+          python3 sorryLXK.py
+      - name: '运行 【盲盒抽京豆(活动时间：2021年1月6日～2021年2月5日)】'
+        run: |
+          node jd_mh.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
@@ -62,3 +65,6 @@ jobs:
           BOOKSHOP_SHARECODES: ${{ secrets.BOOKSHOP_SHARECODES }}
           JD_CASH_SHARECODES: ${{ secrets.JD_CASH_SHARECODES }}
           JXNC_SHARECODES: ${{ secrets.JXNC_SHARECODES }}
+          JDSGMH_SHARECODES: ${{ secrets.JDSGMH_SHARECODES }}
+          JDNIAN_SHARECODES: ${{ secrets.JDNIAN_SHARECODES }}
+          JDSXSY_SHARECODES: ${{ secrets.JDSXSY_SHARECODES }}
