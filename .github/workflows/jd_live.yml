@@ -1,12 +1,12 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_live_京东直播(每日18豆)
+name: jd_live_京东直播（又回来了）
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10-20/5 3 * * *'
+    - cron: '30-50/5 4,15 * * *'
   watch:
     types: [started]
   repository_dispatch:
@@ -39,7 +39,7 @@ jobs:
       - name: run script
         run: |
           python3 sorryLXK.py
-      - name: '运行 【京东直播(每日18豆)】'
+      - name: '运行 【京东直播（又回来了）】'
         run: |
           node jd_live.js
         env:

@@ -6,7 +6,7 @@ name: jd_superMarket_东东超市
 on:
   workflow_dispatch:
   schedule:
-    - cron: '11 0-15,17-23/5 * * *'
+    - cron: '31 0-15,17-23/5 * * *'
   watch:
     types: [started]
   repository_dispatch:

@@ -19,7 +19,7 @@ res = []
 count = 0
 is_new_cron = True
 # 将数据转成数组
-for i in rarr[3:]:
+for i in rarr[4:]:
     # 无用行
     if "#短期活动#" in i or "#长期活动#" in i or i == '':
         continue
@@ -49,8 +49,6 @@ for i in rarr[3:]:
         name = i[1:].strip() # 去空格和#
         res.append([name])
         is_new_cron = True
-#  print(res)
-#  exit()
 
 '''
 crondic中的元素示例:
@@ -76,7 +74,7 @@ for i in res:
             'actionName': 'jd_bean_sign_签到'
         })
     else:
-        if i[1][0] == '#': # 上游中此条cron被注释, 如jd_family
+        if i[1][0] == '#': # 上游中此条cron被注释或被删除, 如jd_family
             continue
         crondic.append({
             'nameCN': i[0],
@@ -86,8 +84,8 @@ for i in res:
             'fileName': i[2][i[2].rfind('/')+1:len(i[2])-3], # 无拓展名的文件名
             'actionName': i[2][i[2].rfind('/')+1:len(i[2])-3] + '_' + i[0]
         })
-# print(crondic)
-# exit()
+#  print(crondic)
+#  exit()
 
 # 打开模版
 with open('./template.txt', 'r') as f:

@@ -6,7 +6,7 @@ name: jd_syj_十元街
 on:
   workflow_dispatch:
   schedule:
-    - cron: '36 0,10 * * *'
+    - cron: '12 0,10 * * *'
   watch:
     types: [started]
   repository_dispatch:

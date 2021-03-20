@@ -6,7 +6,7 @@ name: jd_get_share_code_导到所有互助码
 on:
   workflow_dispatch:
   schedule:
-    - cron: '47 23 * * *'
+    - cron: '23 23 * * *'
   watch:
     types: [started]
   repository_dispatch:

@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_lotteryMachine_京东抽奖机
+name: jd_mohe_5G超级盲盒 活动时间：2021-03-19到2021-04-30
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '31 4,15-16 * * *'
+    - cron: '0 0-23/4 * * *'
   watch:
     types: [started]
   repository_dispatch:
-    types: lotteryMachine
+    types: mohe
 jobs:
   build:
 
@@ -39,9 +39,9 @@ jobs:
       - name: run script
         run: |
           python3 sorryLXK.py
-      - name: '运行 【京东抽奖机】'
+      - name: '运行 【5G超级盲盒 活动时间：2021-03-19到2021-04-30】'
         run: |
-          node jd_lotteryMachine.js
+          node jd_mohe.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}

@@ -6,7 +6,7 @@ name: jd_bookshop_口袋书店
 on:
   workflow_dispatch:
   schedule:
-    - cron: '7 0,4,10 * * *'
+    - cron: '38 0,4,10 * * *'
   watch:
     types: [started]
   repository_dispatch:

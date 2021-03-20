@@ -6,7 +6,7 @@ name: jd_necklace_点点券
 on:
   workflow_dispatch:
   schedule:
-    - cron: '20 12,16 * * *'
+    - cron: '40 12,16 * * *'
   watch:
     types: [started]
   repository_dispatch:

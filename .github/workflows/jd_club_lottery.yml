@@ -6,7 +6,7 @@ name: jd_club_lottery_摇京豆
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '6 16 * * *'
   watch:
     types: [started]
   repository_dispatch:

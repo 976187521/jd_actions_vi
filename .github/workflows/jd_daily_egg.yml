@@ -6,7 +6,7 @@ name: jd_daily_egg_天天提鹅
 on:
   workflow_dispatch:
   schedule:
-    - cron: '18 * * * *'
+    - cron: '28 * * * *'
   watch:
     types: [started]
   repository_dispatch:

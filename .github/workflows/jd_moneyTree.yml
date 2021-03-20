@@ -6,7 +6,7 @@ name: jd_moneyTree_摇钱树
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '23 */2 * * *'
   watch:
     types: [started]
   repository_dispatch:

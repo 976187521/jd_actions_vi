@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_lotteryMachine_京东抽奖机
+name: jd_speed_sign_京东极速版签到+赚现金任务
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '31 4,15-16 * * *'
+    - cron: '21 17,22 * * *'
   watch:
     types: [started]
   repository_dispatch:
-    types: lotteryMachine
+    types: speed_sign
 jobs:
   build:
 
@@ -39,9 +39,9 @@ jobs:
       - name: run script
         run: |
           python3 sorryLXK.py
-      - name: '运行 【京东抽奖机】'
+      - name: '运行 【京东极速版签到+赚现金任务】'
         run: |
-          node jd_lotteryMachine.js
+          node jd_speed_sign.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}

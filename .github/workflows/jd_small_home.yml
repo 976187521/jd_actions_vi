@@ -6,7 +6,7 @@ name: jd_small_home_东东小窝
 on:
   workflow_dispatch:
   schedule:
-    - cron: '16 15,22 * * *'
+    - cron: '46 15,22 * * *'
   watch:
     types: [started]
   repository_dispatch:

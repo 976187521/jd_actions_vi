@@ -6,7 +6,7 @@ name: jd_speed_京东天天加速
 on:
   workflow_dispatch:
   schedule:
-    - cron: '8 */3 * * *'
+    - cron: '28 */3 * * *'
   watch:
     types: [started]
   repository_dispatch:
