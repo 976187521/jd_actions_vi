@@ -6,7 +6,7 @@ name: jd_mohe_5G超级盲盒 活动时间：2021-03-19到2021-04-30
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0-23/4 * * *'
+    - cron: '10 0-23/4 * * *'
   watch:
     types: [started]
   repository_dispatch:
@@ -68,3 +68,5 @@ jobs:
           JDSGMH_SHARECODES: ${{ secrets.JDSGMH_SHARECODES }}
           JDNIAN_SHARECODES: ${{ secrets.JDNIAN_SHARECODES }}
           JDSXSY_SHARECODES: ${{ secrets.JDSXSY_SHARECODES }}
+          CITY_SHARECODES: ${{ secrets.CITY_SHARECODES }}
+          JDCFD_SHARECODES: ${{ secrets.JDCFD_SHARECODES }}

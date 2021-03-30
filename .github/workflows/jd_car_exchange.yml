@@ -68,3 +68,5 @@ jobs:
           JDSGMH_SHARECODES: ${{ secrets.JDSGMH_SHARECODES }}
           JDNIAN_SHARECODES: ${{ secrets.JDNIAN_SHARECODES }}
           JDSXSY_SHARECODES: ${{ secrets.JDSXSY_SHARECODES }}
+          CITY_SHARECODES: ${{ secrets.CITY_SHARECODES }}
+          JDCFD_SHARECODES: ${{ secrets.JDCFD_SHARECODES }}
